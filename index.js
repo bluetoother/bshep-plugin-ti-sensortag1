@@ -39,14 +39,14 @@ module.exports = {
             {name: 'oadImageBlock', uuid: '0xffc2'}, 
         ]
     },
-    analysis: function (periph, basicInfo) {
-        var checkFlag = false;
+    examine: function (periph, basicInfo) {
+        var isMine = false;
 
         if (basicInfo.manufacturer === 'Texas Instruments' &&
             basicInfo.devName === 'TI BLE Sensor Tag' &&
-            basicInfo.version.fw === '1.01 (Feb  7 2013)')
-            checkFlag = true;
+            basicInfo.fwRev === '1.01 (Feb  7 2013)')
+            isMine = true;
 
-        return checkFlag;
+        return isMine;
     }
 };
